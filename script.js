@@ -2,12 +2,13 @@ let captchaCheck = false;
 function beforesubmit(event) {
     if(captchaCheck) {
         let outputdate = document.querySelector(".outputdate");
+        console.log("outputdate.value: ",outputdate.value)
         let inputdate = document.querySelector(".inputdate");
-        console.log(inputdate.value);
+        console.log("inputdate.value: ",inputdate.value);
 
         let formattedDate = new Date(inputdate.value).toLocaleDateString("en-US");
         outputdate.value = formattedDate;
-        console.log('outputdate.value',outputdate.value);
+        console.log('outputdate.value: ',outputdate.value);
     } else {
         alert("Please check reCaptcha boxto submit the Lead");
         event.preventDefault();
